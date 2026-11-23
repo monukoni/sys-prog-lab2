@@ -1,0 +1,14 @@
+build/
+FlameGraph/
+results/**/*.data
+results/**/*.data.old
+results/**/*.perf
+.vscode/
+results/**/*.folded
+results/**/program_output.txt
+results/O3*/perf_annotate_matmul.txt
+results/hwinfo_log.csv
+results/hwinfo_marks.json
+asm/not_vectorized.txt
+scripts/hwinfo_energy.py
+scripts/energy.py

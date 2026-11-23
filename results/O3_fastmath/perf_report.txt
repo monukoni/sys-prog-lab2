@@ -1,0 +1,31 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles:P'
+# Event count (approx.): 2788062808
+#
+# Overhead  Command          Shared Object         Symbol                                       
+# ........  ...............  ....................  .............................................
+#
+    70.89%  bench_O3_fastma  bench_O3_fastmath     [.] main
+            |
+            ---main
+               0x7cf4c1e2a1ca
+               __libc_start_main
+               _start
+
+    22.84%  bench_O3_fastma  bench_O3_fastmath     [.] matmul
+            |
+            ---matmul
+               main
+               0x7cf4c1e2a1ca
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

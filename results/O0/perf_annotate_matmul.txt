@@ -1,0 +1,113 @@
+ Percent |	Source code & Disassembly of bench_O0 for cycles:P (13125 samples, percent: local period)
+---------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    00000000000012be <matmul>:
+         : 6    for (int i = 0; i < n; i++)
+         : 7    a[i] = next_random();
+         : 8    }
+         :
+         : 10   void matmul(const float *a, const float *b, float *c, int n)
+         : 11   {
+    0.00 :   12be:   endbr64
+    0.00 :   12c2:   push   %rbp
+    0.00 :   12c3:   mov    %rsp,%rbp
+    0.00 :   12c6:   mov    %rdi,-0x28(%rbp)
+    0.00 :   12ca:   mov    %rsi,-0x30(%rbp)
+    0.00 :   12ce:   mov    %rdx,-0x38(%rbp)
+    0.00 :   12d2:   mov    %ecx,-0x3c(%rbp)
+         : 19   for (int i = 0; i < n * n; i++)
+    0.00 :   12d5:   movl   $0x0,-0x14(%rbp)
+    0.00 :   12dc:   jmp    12fe <matmul+0x40>
+         : 22   c[i] = 0.0f;
+    0.00 :   12de:   mov    -0x14(%rbp),%eax
+    0.00 :   12e1:   cltq
+    0.00 :   12e3:   lea    0x0(,%rax,4),%rdx
+    0.00 :   12eb:   mov    -0x38(%rbp),%rax
+    0.01 :   12ef:   add    %rdx,%rax
+    0.00 :   12f2:   pxor   %xmm0,%xmm0
+    0.00 :   12f6:   movss  %xmm0,(%rax)
+         : 30   for (int i = 0; i < n * n; i++)
+    0.01 :   12fa:   addl   $0x1,-0x14(%rbp)
+    0.01 :   12fe:   mov    -0x3c(%rbp),%eax
+    0.00 :   1301:   imul   %eax,%eax
+    0.00 :   1304:   cmp    %eax,-0x14(%rbp)
+    0.00 :   1307:   jl     12de <matmul+0x20>
+         : 36   for (int i = 0; i < n; i++)
+    0.00 :   1309:   movl   $0x0,-0x10(%rbp)
+    0.00 :   1310:   jmp    13e4 <matmul+0x126>
+         : 39   for (int k = 0; k < n; k++) {
+    0.00 :   1315:   movl   $0x0,-0xc(%rbp)
+    0.00 :   131c:   jmp    13d4 <matmul+0x116>
+         : 42   float aik = a[i * n + k];
+    0.00 :   1321:   mov    -0x10(%rbp),%eax
+    0.00 :   1324:   imul   -0x3c(%rbp),%eax
+    0.00 :   1328:   mov    %eax,%edx
+    0.00 :   132a:   mov    -0xc(%rbp),%eax
+    0.00 :   132d:   add    %edx,%eax
+    0.01 :   132f:   cltq
+    0.00 :   1331:   lea    0x0(,%rax,4),%rdx
+    0.01 :   1339:   mov    -0x28(%rbp),%rax
+    0.00 :   133d:   add    %rdx,%rax
+    0.01 :   1340:   movss  (%rax),%xmm0
+    0.18 :   1344:   movss  %xmm0,-0x4(%rbp)
+         : 54   for (int j = 0; j < n; j++)
+    0.02 :   1349:   movl   $0x0,-0x8(%rbp)
+    0.00 :   1350:   jmp    13c8 <matmul+0x10a>
+         : 57   c[i * n + j] += aik * b[k * n + j];
+    0.32 :   1352:   mov    -0x10(%rbp),%eax
+    0.04 :   1355:   imul   -0x3c(%rbp),%eax
+    0.02 :   1359:   mov    %eax,%edx
+    0.04 :   135b:   mov    -0x8(%rbp),%eax
+    8.17 :   135e:   add    %edx,%eax
+    0.06 :   1360:   cltq
+    0.03 :   1362:   lea    0x0(,%rax,4),%rdx
+    0.06 :   136a:   mov    -0x38(%rbp),%rax
+    0.52 :   136e:   add    %rdx,%rax
+    0.15 :   1371:   movss  (%rax),%xmm1
+    0.71 :   1375:   mov    -0xc(%rbp),%eax
+    0.09 :   1378:   imul   -0x3c(%rbp),%eax
+    8.28 :   137c:   mov    %eax,%edx
+    0.05 :   137e:   mov    -0x8(%rbp),%eax
+    0.02 :   1381:   add    %edx,%eax
+    0.02 :   1383:   cltq
+    0.26 :   1385:   lea    0x0(,%rax,4),%rdx
+    0.23 :   138d:   mov    -0x30(%rbp),%rax
+    0.19 :   1391:   add    %rdx,%rax
+    0.11 :   1394:   movss  (%rax),%xmm0
+   16.47 :   1398:   mulss  -0x4(%rbp),%xmm0
+   24.13 :   139d:   mov    -0x10(%rbp),%eax
+    0.02 :   13a0:   imul   -0x3c(%rbp),%eax
+    0.01 :   13a4:   mov    %eax,%edx
+    0.20 :   13a6:   mov    -0x8(%rbp),%eax
+    0.04 :   13a9:   add    %edx,%eax
+    0.02 :   13ab:   cltq
+    0.09 :   13ad:   lea    0x0(,%rax,4),%rdx
+    0.74 :   13b5:   mov    -0x38(%rbp),%rax
+    7.41 :   13b9:   add    %rdx,%rax
+    0.04 :   13bc:   addss  %xmm1,%xmm0
+   22.89 :   13c0:   movss  %xmm0,(%rax)
+         : 90   for (int j = 0; j < n; j++)
+    8.03 :   13c4:   addl   $0x1,-0x8(%rbp)
+    0.16 :   13c8:   mov    -0x8(%rbp),%eax
+    0.02 :   13cb:   cmp    -0x3c(%rbp),%eax
+    0.00 :   13ce:   jl     1352 <matmul+0x94>
+         : 95   for (int k = 0; k < n; k++) {
+    0.01 :   13d0:   addl   $0x1,-0xc(%rbp)
+    0.03 :   13d4:   mov    -0xc(%rbp),%eax
+    0.06 :   13d7:   cmp    -0x3c(%rbp),%eax
+    0.00 :   13da:   jl     1321 <matmul+0x63>
+         : 100  for (int i = 0; i < n; i++)
+    0.00 :   13e0:   addl   $0x1,-0x10(%rbp)
+    0.00 :   13e4:   mov    -0x10(%rbp),%eax
+    0.00 :   13e7:   cmp    -0x3c(%rbp),%eax
+    0.00 :   13ea:   jl     1315 <matmul+0x57>
+         : 105  }
+         : 106  }
+    0.00 :   13f0:   nop
+    0.00 :   13f1:   nop
+    0.00 :   13f2:   pop    %rbp
+    0.00 :   13f3:   ret

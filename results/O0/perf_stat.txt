@@ -1,0 +1,24 @@
+# started on Mon Nov 23 08:41:22 2026
+
+
+ Performance counter stats for 'build/bench_O0 1024 16777216 50' (5 runs):
+
+           5387.76 msec task-clock                       #    0.996 CPUs utilized               ( +-  0.81% )
+                19      context-switches                 #    3.527 /sec                        ( +- 18.64% )
+                10      cpu-migrations                   #    1.856 /sec                        ( +- 18.17% )
+             35908      page-faults                      #    6.665 K/sec                       ( +-  0.00% )
+       21178977542      cycles                           #    3.931 GHz                         ( +-  0.45% )
+       64342603482      instructions                     #    3.04  insn per cycle              ( +-  0.00% )
+        2300889182      branches                         #  427.059 M/sec                       ( +-  0.00% )
+           1234085      branch-misses                    #    0.05% of all branches             ( +-  0.48% )
+                        TopdownL1                 #      0.8 %  tma_backend_bound      
+                                                  #     95.0 %  tma_bad_speculation    
+                                                  #      0.1 %  tma_frontend_bound     
+                                                  #      4.1 %  tma_retiring             ( +-  0.20% )
+       31493450185      L1-dcache-loads                  #    5.845 G/sec                       ( +-  0.00% )
+         198373515      L1-dcache-load-misses            #    0.63% of all L1-dcache accesses   ( +-  0.05% )
+   <not supported>      LLC-loads                                                             
+   <not supported>      LLC-load-misses                                                       
+
+            5.4087 +- 0.0421 seconds time elapsed  ( +-  0.78% )
+

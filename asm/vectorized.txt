@@ -1,0 +1,14 @@
+src/bench.c:26:31: optimized: loop vectorized using 32 byte vectors
+src/bench.c:26:31: optimized:  loop versioned for vectorization because of possible aliasing
+src/bench.c:26:31: optimized: loop vectorized using 16 byte vectors
+src/bench.c:33:23: optimized: loop vectorized using 32 byte vectors
+src/bench.c:33:23: optimized:  loop versioned for vectorization because of possible aliasing
+src/bench.c:33:23: optimized: loop vectorized using 16 byte vectors
+src/bench.c:40:23: optimized: loop vectorized using 32 byte vectors
+src/bench.c:40:23: optimized: loop vectorized using 16 byte vectors
+src/bench.c:40:23: optimized: loop vectorized using 32 byte vectors
+src/bench.c:40:23: optimized: loop vectorized using 16 byte vectors
+src/bench.c:33:23: optimized: loop vectorized using 32 byte vectors
+src/bench.c:33:23: optimized: loop vectorized using 16 byte vectors
+src/bench.c:33:23: optimized: loop vectorized using 32 byte vectors
+src/bench.c:33:23: optimized: loop vectorized using 16 byte vectors

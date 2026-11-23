@@ -1,0 +1,40 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 21K of event 'cycles:P'
+# Event count (approx.): 21335591025
+#
+# Overhead  Command   Shared Object         Symbol                                        
+# ........  ........  ....................  ..............................................
+#
+    60.22%  bench_O0  bench_O0              [.] matmul
+            |
+            ---matmul
+               main
+               0x75262142a1ca
+               __libc_start_main
+               _start
+
+    28.91%  bench_O0  bench_O0              [.] axpy
+            |
+            ---axpy
+               main
+               0x75262142a1ca
+               __libc_start_main
+               _start
+
+     7.82%  bench_O0  bench_O0              [.] dot
+            |
+            ---dot
+               main
+               0x75262142a1ca
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
